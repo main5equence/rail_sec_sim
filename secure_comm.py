@@ -2,9 +2,8 @@ import hmac
 import hashlib
 from cryptography.fernet import Fernet
 
-# Ustalony klucz wspólny
 SECRET_KEY = b'my_shared_secret_key_123'
-FERNET_KEY = Fernet.generate_key()  # 👉 Do testów — potem zamień na stały!
+FERNET_KEY = Fernet.generate_key() 
 
 fernet = Fernet(FERNET_KEY)
 
