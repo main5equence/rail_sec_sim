@@ -5,7 +5,7 @@ from secure_comm import verify_signature, decrypt_message
 HOST = 'localhost'
 PORT = 9999
 
-attack_count = 0  # 🔴 LICZNIK ATAKÓW
+attack_count = 0 
 
 def start_control_center():
     global attack_count
