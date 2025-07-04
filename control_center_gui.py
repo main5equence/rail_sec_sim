@@ -44,13 +44,11 @@ def start_gui():
     window.title("🚆 Cyber Control Center")
     window.geometry("400x250")
 
-    # 🔵 Zmienne GUI:
     attack_count = IntVar()
     success_count = IntVar()
     last_train = StringVar()
     last_status = StringVar()
 
-    # UI layout
     Label(window, text="Secure Train Monitoring", font=("Arial", 16, "bold")).pack(pady=10)
     Label(window, text="✅ Successful messages:").pack()
     Label(window, textvariable=success_count, fg="green", font=("Arial", 12)).pack()
@@ -61,7 +59,6 @@ def start_gui():
     Label(window, text="📡 Status:").pack()
     Label(window, textvariable=last_status, font=("Arial", 10)).pack()
 
-    # 🔁 Uruchom nasłuchiwanie w tle
     threading.Thread(target=handle_connection, args=(attack_count, success_count, last_train, last_status), daemon=True).start()
     window.mainloop()
 
